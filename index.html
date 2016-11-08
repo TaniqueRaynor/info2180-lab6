@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Lab6</title>
+        <script>
+            function def(){
+                 var xmlhttp = new XMLHttpRequest();
+                 xmlhttp.onreadystatechange= function(){
+                      if (this.readyState === 4 && this.status === 200){
+                             var Resp = xmlhttp.responseText;
+                             alert(Resp);
+                             //document.getElementById("text").innerHTML= this.responseText;
+                          }
+                    };
+                 xmlhttp.open("GET","request.php?q=definition", true);
+                 xmlhttp.send();
+                 }
+        </script>
+    </head>
+    <body>
+        <button onclick="def()">Search</button>
+        <h1 id="text"></h1>
+    </body>
+</html>
