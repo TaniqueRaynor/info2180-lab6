@@ -2,82 +2,8 @@
 <html>
     <head>
         <title>Lab6</title>
-        <style>
-            body{
-                background-image:url("image.jpg");
-            }
-            #dict{
-                border:2px solid #990000;
-                border-radius:5px 5px 5px;
-                width:60%;
-                height:460px;
-                top:70px;
-                left:330px;
-                box-shadow:10px 10px 5px  black;
-                opacity:0.8;
-                position:relative;
-                background-color:Ivory;
-            }
-            
-            form{
-                top:40px;
-                left:50px;
-                position:relative;
-            }
-            .border{
-                border:2px solid black ;
-                background-color: black;
-                height:80px;
-                text-align:center;
-                color:#ffcc00;
-            }
-            #txt{
-                width:200px;
-                height:25px;
-                
-            }
-            
-            #btn{
-                height:32px;
-                width:80px;
-                
-            }
-            #result{
-                position:relative;
-                margin:0 auto;
-                top:50px;
-                left:60px;
-            }
-            
-            .par{
-                position:relative;
-                left:50px;
-                top:25px;
-                color:#990000;
-            }
-            
-        </style>
-        <script>
-           
-            function def(){
-                 var str = document.getElementById("txt").value;
-                if (str.length == 0) { 
-                    document.getElementById("txt").innerHTML = "";
-                    return;
-                    } 
-                    else{
-                        var xmlhttp = new XMLHttpRequest();
-                        xmlhttp.onreadystatechange= function(){
-                        if (this.readyState === 4 && this.status === 200){
-                             document.getElementById("result").innerHTML= this.responseText;
-                          }
-                    };
-                 xmlhttp.open("GET","request.php?q="+str.toLowerCase(), true);
-                 xmlhttp.send();
-                    }
-                 
-                 }
-        </script>
+        <link rel="stylesheet" href="search.css" type="text/css" />
+        <script type="text/javascript" src="search.js"></script>
     </head>
     <body>
         <div id="dict">
@@ -85,7 +11,7 @@
             <p class="par">Find the meaning of the words definition, bar, ajax, html, css, javascript and php using this search bar.</p>
             <form>
                 <input type="text"  id="txt"/>
-                <input type="button" value="Search" id="btn" onclick="def()" />
+                <input type="button" value="Search" id="btn" onclick="def()" /><input type="button" value= "Get All Definitions " id="btn1" onclick="GetAll()" />
             </form>
             <div id="result"></div>
         </div>
